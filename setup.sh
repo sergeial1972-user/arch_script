@@ -20,7 +20,7 @@ sudo systemctl status "syncthing@$SUDO_USER.service" --no-pager
 sudo -u "$SUDO_USER" mkdir -p "/home/$SUDO_USER/.shared/{Keepass,Obsidian}"
 
 #software
-sudo pacman -S obsidian keepassxc fish firefox uv zed jupyterlab rust docker --noconfirm
+sudo pacman -S obsidian keepassxc fish firefox uv zed jupyterlab rust docker solaar --noconfirm
 
 #fish
 su - "$SUDO_USER" -c "chsh -s \"\$(which fish)\""
