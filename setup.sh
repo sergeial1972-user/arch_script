@@ -20,7 +20,7 @@ sudo systemctl status "syncthing@$SUDO_USER.service" --no-pager
 sudo -u "$SUDO_USER" mkdir -p "/home/$SUDO_USER/.shared/{Keepass,Obsidian}"
 
 #software
-sudo pacman -S obsidian keepassxc fish firefox uv zed jupyterlab rust docker solaar tmux   --noconfirm
+sudo pacman -S obsidian keepassxc fish firefox uv zed jupyterlab rust docker solaar tmux micro --noconfirm
 
 #fish
 su - "$SUDO_USER" -c "chsh -s \"\$(which fish)\""
@@ -36,8 +36,10 @@ rm -rf /tmp/nekoray
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod +x Miniconda3-latest-Linux-x86_64.sh
 sudo -u "$SUDO_USER" bash Miniconda3-latest-Linux-x86_64.sh -b -p "/home/$SUDO_USER/.miniconda3"
-sudo -u "$SUDO_USER" ~/.miniconda3/bin/conda init bash
+sudo -wu "$SUDO_USER" ~/.miniconda3/bin/conda init bash
 sudo -u "$SUDO_USER" ~/.miniconda3/bin/conda init fish
+
+rm Miniconda3-latest-Linux-x86_64.sh
 
 #flatpak
 sudo pacman -S flatpak --noconfirm
